@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/icon-booksTracker.ico">
+    <title>Books Tracker</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <h1 class="title-app">Books Tracker</h1>
+        <div class="user-account">
+            <button class="signIn-btn" id="signIn-btn">
+                <img src="./images/icon-google.png" alt="icon-google" />
+                <span id="signIn-text">Connect with Google</span>
+            </button>
+
+            <div class="user-profile"></div>
+            <button class="signOut-btn">Sign Out</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-tracker">
+            <h1 class="title-content">Reading Progress</h1>
+            <div class="tracking-data">
+                <div class="info-data">
+                    <h3 class="info-title">Total books</h3>
+                    <span class="info-value" id="total-books">0</span>
+                </div>
+                <div class="info-data books-read">
+                    <h3 class="info-title">Books read</h3>
+                    <span class="info-value" id="books-read">0</span>
+                </div>
+                <div class="info-data pages-read">
+                    <h3 class="info-title">Pages read</h3>
+                    <span class="info-value" id="pages-read">0</span>
+                </div>
+                <div class="info-data">
+                    <h3 class="info-title">Books unread</h3>
+                    <span class="info-value" id="books-unread">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-books">
+            <div class="buttons-content">
+                <button class="addBook-btn" id="addBook-btn">
+                    <i class="fas fas fa-plus"></i>
+                    <span>Add book</span>
+                </button>
+
+                <div class="buttons-filter">
+                    <button class="filter-all-books">all</button>
+                    <button class="filter-booksRead">read</button>
+                    <button class="filter-booksNotRead">not read</button>
+                </div>
+            </div>
+
+            <span class="messageNoBooks">no books added yet...</span>
+            <div class="books-grid">
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            Copyright ©
+            <span id="currentYear"></span>
+            Ariana Gutierrez
+        </p>
+    </footer>
+
+    <div class="alert-addBtn">
+        <div class="content-alert">
+            <div class="alert-Msg">
+                <span class="alert-title">message alert:</span>
+                <span class="alert-text">you need to connect <br> to your Google account <br>to create your list!</span>
+            </div>
+            <button class="close-alertMsg">close</button>
+        </div>
+    </div>
+
+    <!--------------------------------- MODALS --------------------------------->
+    <div class="modal-addBook">
+        <form class="addBook-form" id="addBookForm">
+            <h2 class="title-form">New book</h2>
+            <input name="title" type="text" id="title"  placeholder="What's the title?..." required maxlength="50" />
+
+            <p class="errorModal-msg" id="errorModal-msg">Title already exists! <br/> Choose a different title!</p>
+
+            <input name="author" type="text" id="author"  placeholder="Who's the author?..." required maxlength="50" />
+            <input name="pages" type="number" id="pages"  placeholder="N° of pages..." required max="30000" />
+
+            <div class="reading-status">
+                <label for="isRead">Did you read it?</label>
+                <input name="isRead" type="checkbox" id="isRead" />
+            </div>
+
+            <div class="buttons-form">
+                <button class="btn submit-btn" type="submit">Add</button>
+                <button class="btn cancel-btn" type="cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
