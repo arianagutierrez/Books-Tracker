@@ -1,6 +1,6 @@
 # Books Tracker
 
-[Books Tracker]() project is a web application designed to enable users to create a personalized books list. Build with HTML, Sass, Javascript and Firebase (authentication and realtime database).
+[Books Tracker]() project is a web app designed to enable users to create a personalized books list. Build with HTML, Sass, Javascript and Firebase (authentication and realtime database).
 
 ## Key Features
 - User Authentication: Securely sign in with your Google account to access personalized book lists and reading progress.
