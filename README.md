@@ -18,8 +18,8 @@
 ## Lesson source
 
 - [Sign In with Google - Authentication using Firebase 9 or 10 and Vanilla JavaScript](https://www.youtube.com/watch?v=vuLTzi17k14) 
-- [Connect an HTML webpage to a Firebase database for CRUD using vanilla JavaScript](https://www.youtube.com/watch?v=_p4Hgzm_oNQ)
-<br/>
+- [Connect an HTML webpage to a Firebase database for CRUD using vanilla JavaScript](https://www.youtube.com/watch?v=_p4Hgzm_oNQ) <br/>
+
 by [Keith Paterson](https://www.youtube.com/@kpatelearn)
 
-Special thanks to the professor!
+A special thanks to the professor!
