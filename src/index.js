@@ -1,3 +1,4 @@
+import './styles/styles.scss'
 import { initializeApp } from 'firebase/app'
 import { GoogleAuthProvider, getAuth, onAuthStateChanged } from 'firebase/auth'
 import { get, getDatabase, onValue, push, ref, remove, set, update } from 'firebase/database'
@@ -180,48 +181,49 @@ onAuthStateChanged(auth, (user) => {
         }
 
         function createBookItem(bookId, book) {
-            const bookItem = document.createElement("div");
-            bookItem.classList.add("book-card");
+            const bookItem = document.createElement("div")
+            bookItem.classList.add("book-card")
+            bookItem.style.background = `url('images/book-cover.jpg') center/cover no-repeat`
         
-            const bTitle = document.createElement("p");
-            bTitle.id = 'bTitle';
-            bTitle.textContent = book.title;
+            const bTitle = document.createElement("p")
+            bTitle.id = 'bTitle'
+            bTitle.textContent = book.title
         
-            const bAuthor = document.createElement("p");
-            bAuthor.id = 'bAuthor';
-            bAuthor.textContent = book.author;
+            const bAuthor = document.createElement("p")
+            bAuthor.id = 'bAuthor'
+            bAuthor.textContent = book.author
         
-            const bPages = document.createElement("p");
-            bPages.id = 'bPages';
-            bPages.textContent = book.pages + " " + 'pages';
+            const bPages = document.createElement("p")
+            bPages.id = 'bPages'
+            bPages.textContent = book.pages + " " + 'pages'
         
-            const divBtnsCB = document.createElement("div");
-            divBtnsCB.classList.add("buttons-cardBook");
+            const divBtnsCB = document.createElement("div")
+            divBtnsCB.classList.add("buttons-cardBook")
         
-            const isReadBtn = document.createElement("button");
-            isReadBtn.id = 'isReadBtn';
-            isReadBtn.textContent = book.isRead ? "Read" : "Not Read";
-            isReadBtn.classList.add(book.isRead ? 'read' : 'not-read');
+            const isReadBtn = document.createElement("button")
+            isReadBtn.id = 'isReadBtn'
+            isReadBtn.textContent = book.isRead ? "Read" : "Not Read"
+            isReadBtn.classList.add(book.isRead ? 'read' : 'not-read')
             isReadBtn.addEventListener("click", () => {
-                updateReadStatus(bookId, !book.isRead);
-            });
+                updateReadStatus(bookId, !book.isRead)
+            })
         
-            const removeBtn = document.createElement("button");
-            removeBtn.id = 'removeBook';
-            removeBtn.textContent = "Remove";
+            const removeBtn = document.createElement("button")
+            removeBtn.id = 'removeBook'
+            removeBtn.textContent = "Remove"
             removeBtn.addEventListener("click", () => {
-                removeBook(bookId);
-            });
+                removeBook(bookId)
+            })
         
-            divBtnsCB.appendChild(isReadBtn);
-            divBtnsCB.appendChild(removeBtn);
+            divBtnsCB.appendChild(isReadBtn)
+            divBtnsCB.appendChild(removeBtn)
         
-            bookItem.appendChild(bTitle);
-            bookItem.appendChild(bAuthor);
-            bookItem.appendChild(bPages);
-            bookItem.appendChild(divBtnsCB);
+            bookItem.appendChild(bTitle)
+            bookItem.appendChild(bAuthor)
+            bookItem.appendChild(bPages)
+            bookItem.appendChild(divBtnsCB)
         
-            return bookItem;
+            return bookItem
         }
         
         //update the read Status of the book
